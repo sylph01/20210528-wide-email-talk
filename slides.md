@@ -351,16 +351,104 @@ $CK_i+1$ から $CK_i$ が計算できないことに注意。
 
 ----
 
-- サービス事業者の「悪堕ち」に耐えるには？→Self-Sovereign Identity
-- SSIのコンセプト
-  - https://lepidum.co.jp/blog/2020-01-31/self-sovereign-identity/
-- identity表現の出しわけをしたい
-  - corelationを割けたい
-  - pair-wise identifier
-- EメールはもともとSelf-Sovereignだった
-  - Eメールというプロトコルがいかに中央集権化されていったか
-- Principles of User Sovereignty / Fundamental Problems of Distributed Systems @ IIW30
+# Self-Sovereign Identityとは
 
+日本語だと「自己主権型アイデンティティ」と呼ばれる。
+
+外部のIdentity Providerに頼る中央集権化されたアイデンティティモデルに対して、自らの手にアイデンティティのコントロールを取り戻すことを目指す動き・その思想のこと。
+
+前職のテックブログに記事を書いた。 https://lepidum.co.jp/blog/2020-01-31/self-sovereign-identity/
+
+----
+
+# Self-Sovereign Identityとは
+
+- 中央集権化されたIDのリスク
+  - 情報漏洩
+  - 情報の目的外利用、必要以上の情報収集
+  - 自らのデジタルアイデンティティへのアクセスを失う
+    - 2020年以降Terms of Service違反でのアカウントBANが急に現実化した
+
+<!-- 西洋の主要な政治的指向や倫理観に反するアカウントがBANの危機にさらされるようになった。日本人にとって最も身近なのは「絵師が児童ポルノを描いているとしてBANされる」例 -->
+
+----
+
+# Self-Sovereign Identityで実現したい主な機能
+
+- アイデンティティ情報の提供範囲の制御
+  - 文脈によってアイデンティティを使い分ける
+- アイデンティティの有効期限の制御
+
+現実世界では既に行われている！
+
+<!-- アイデンティティ情報の出し分け: correlationを避けるためにpair-wise identifierを使う。professionalな私と趣味の私と家庭での私はそれぞれ別の側面を出し分けている、混同されると困る -->
+
+----
+
+# Eメールはもともとself-sovereignだった
+
+----
+
+# Eメールはもともとself-sovereignだった
+# (**ただしマッチョに限る**)
+
+----
+
+# Eメールはもともとself-sovereignだった
+
+SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自分でサーバーを立てる限りは。**
+
+- 自分でIDを発行できる
+- 用途によってIDを使い分けることができる
+- 自分のデータは自分で持つことができる
+
+----
+
+# Eメールはもともとself-sovereignだった
+
+最近は誰もそんなことはしない。
+
+- SMTP: 適切に認証をするのが難しい。設定を1個でも間違えるとspamの踏み台
+- IMAP: マルチデバイスアクセスなら必須だがストレージ管理が地獄
+
+結果、本来self-sovereignであるはずのプロトコルなのだが、**中央集権化を許してしまった**
+
+----
+
+# Eメールの中央集権化の加速
+
+中央集権的Eメールプロバイダ(Gmail, Microsoft Live, ...)のspamフィルタの動作は**十分な透明性がなく**、悪意のないメールですらspamフィルタに飲まれてしまう。
+
+中央集権的Eメールプロバイダを利用していないメールはspamフィルタを信用させることが難しくなり、**より中央集権化が進む**
+
+（メール認証が十分に行き渡っていないこと、まただいぶhackyな方法しかないことも挙げられるが…）
+
+----
+
+# Principles of User Sovereignty / Fundamental Problems of Distributed Systems @ IIW30
+
+「分散システムの抱える根本的な問題を解決できないとき、それは企業による中央集権化(corporate capture)を自ら許してしまう」
+
+**Eメールはまさにこの最たる例ではないか？**
+
+----
+
+# Fundamental Problems of Distributed Systems
+
+例:
+
+- ノードのディスカバリー
+- ノードがネットワークに参加する際のセッションの確立 (introduction)
+- プライバシー (識別子による長期的な関連付けの防止)
+- トラスト
+
+これらの問題を十分に解決できなかったので企業がマネタイズの機会を見出し中央集権化してしまった。
+
+----
+
+# The Internetの強みは **自律分散性** ではなかったのか？
+
+----
 
 ----
 
