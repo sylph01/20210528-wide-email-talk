@@ -507,6 +507,14 @@ SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自�
 
 # DIDComm
 
+[Aries RFC 0005: DID Communication](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0005-didcomm/README.md) で説明されている、[Distributed Identifiers](https://w3c.github.io/did-core)をもって識別されるDID Agent同士のコミュニケーションメカニズム。
+
+DIDCommはtransport-agnosticなコミュニケーションのアーキテクチャを示しているものと考えるのがよく、各トランスポートにおける通信方法は[Aries RFC 0025: DIDComm Transports](https://github.com/hyperledger/aries-rfcs/blob/master/features/0025-didcomm-transports/README.md)で書かれている。
+
+相手をどのように発見するか、相手とどのように関係を持つかはDID Coreの仕様に基づいている。
+
+既にいくつかの実装例がある。
+
 ----
 
 # Verifiable Credentialを用いたEメール
@@ -536,3 +544,11 @@ spamフィルタはEメールに関連づいたVCの正当性・信頼度を判�
 - identity layerの構築をEメールプロバイダに任せるとself-sovereignでなくなる
 - セキュアメッセージングのinteroperabilityが欲しい
 - DIDを使ったidentity layerを作ってそれに乗っかってしまうのがいいのでは？
+
+----
+
+# <!--fit--> **やめよう**、SMTP
+
+----
+
+# <!--fit--> Questions/Comments?
