@@ -511,6 +511,12 @@ SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自�
 
 # Verifiable Credentialを用いたEメール
 
+各トランザクション（Eメールのやりとり）で異なるアイデンティティ表現を使うには？ → 特定のアイデンティティ表現に対応するVerifiable Credentialを使えばよいのでは？
+
+spamフィルタはEメールに関連づいたVCの正当性・信頼度を判定する。よりaccountableなIDにたどり着けるVCのほうが高い信頼性とする。
+
+よく考えたらただのbetter digital signatureかもしれないが…
+
 ----
 
 # Data at Restの暗号化
@@ -530,4 +536,3 @@ SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自�
 - identity layerの構築をEメールプロバイダに任せるとself-sovereignでなくなる
 - セキュアメッセージングのinteroperabilityが欲しい
 - DIDを使ったidentity layerを作ってそれに乗っかってしまうのがいいのでは？
-- a
