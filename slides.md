@@ -456,18 +456,69 @@ SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自�
 
 ----
 
-- Better PGPだよね？
-  - 知ってる。
-  - ただし我々は既にBetter PGPを手にしている
-    - LINE, WhatsApp, Keybase(, FB Messenger)っていうんですけど
-  - 暗号鍵の管理がしんどいはそのとおり
-- グループメッセージングはチャットアプリのインターフェースに寄せて再設計していいのでは？
-- 通知にsubscribeする形のmessaging(Notifs)
-- DIDComm
-  - ちゃんと調べて書く
-- Verifiable Credentialを用いたEメール
-  - VC modelの説明
-- data at restの暗号化: JWM
+# 「SMTPをやめろ」というとよく言われる話：
+
+# 「要するにそれ、**Better PGP** でしょ？」
+
+# 「PGPが失敗したのって知ってる？」
+
+----
+
+# <!-- fit --> 知ってる。
+
+----
+
+# 我々は既にBetter PGPを持っている
+
+# ... **LINE, WhatsApp, Telegram, Signal, Keybase (, Facebook Messenger)** っていうんですけど
+
+----
+
+# 我々は既にBetter PGPを持っている
+
+- セキュアメッセージングアプリは**PGPのユーザビリティの問題を解決している**
+  - 暗号化は透過的に行われる
+  - なんなら暗号鍵のライフサイクルすら面倒を見てくれる
+  - 暗号鍵の選択 = 複数アカウントの使い分け
+  - 一部のものは**グループメッセージングすら可能**
+- それが単に**SMTPという形をとっていないだけ**
+
+----
+
+# SMTPでも1対1の暗号化は割と解決している
+
+# SMTPでは1対多の暗号化が難しい
+
+----
+
+# 1対多のユースケース
+
+- メーリングリスト、通知の購読
+  - [An Abuse-Resistant Messaging Protocol](https://www.slideshare.net/jim_fenton/notifs-2018) (Jim Fenton)
+  - 通知に特化した、オプトイン限定かつ送信先が認証されているメッセージングプロトコルのサブセットの提案(Notif)
+- グループでのメッセージのやりとり
+  - 1対多でやりとりする形よりも、ルームを作ってそこにjoinするグループチャットのアプローチを採用すればよいのでは？
+- mass marketing
+  - これは仕方ないので暗号化されてない世界でやってもらうしかないし、たいていspamなのでブロックされても仕方ないのでは？
+
+<!-- Notifsの興味深い点としては、correspondence と notification のユースケースを分離し、notificationの問題だけに特化して解決しようとしている点。correspondenceはどちらかというとメッセージングアプリが解決しようとしているスペース -->
+
+----
+
+# DIDComm
+
+----
+
+# Verifiable Credentialを用いたEメール
+
+----
+
+# Data at Restの暗号化
+
+## JSON Web Message (JWM) の利用
+
+----
+
 
 ----
 
