@@ -381,7 +381,7 @@ $CK_i+1$ から $CK_i$ が計算できないことに注意。
   - 自らのデジタルアイデンティティへのアクセスを失う
     - 2020年以降Terms of Service違反でのアカウントBANが急に現実化した
 
-<!-- 西洋の主要な政治的指向や倫理観に反するアカウントがBANの危機にさらされるようになった。日本人にとって最も身近なのは「絵師が児童ポルノを描いているとしてBANされる」例 -->
+<!-- 西洋の主流の政治的指向や倫理観に反するアカウントがBANの危機にさらされるようになった。日本人にとって最も身近なのは「絵師が児童ポルノを描いているとしてBANされる」例 -->
 
 ----
 
@@ -393,7 +393,22 @@ $CK_i+1$ から $CK_i$ が計算できないことに注意。
 
 現実世界では既に行われている！
 
-<!-- アイデンティティ情報の出し分け: correlationを避けるためにpair-wise identifierを使う。professionalな私と趣味の私と家庭での私はそれぞれ別の側面を出し分けている、混同されると困る -->
+<!-- アイデンティティ情報の出し分け: correlationを避けるためにpair-wise identifierを使う -->
+
+----
+
+# Multi-Source Identity, Verifiable Credentials
+
+- 中央集権的なID管理ではアイデンティティ情報は単一の情報源からのみ提供される
+- 現実には「免許証」「学位」「マイナンバー」…それぞれ発行主体が異なる → **Multi-Source Identity**
+- また、「プロフェッショナルとしての私」「趣味のコミュニティでの私」「家族の中での私」は役割が違い、混同してほしくない → アイデンティティ情報に対するコントロールが欲しい
+- これを支える仕組みとして[Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) がある
+
+----
+
+![bg contain](ecosystem.svg)
+
+<!-- 免許証: Verifiable Credential, 公安委員会: Issuer, 警察官: Verifier -->
 
 ----
 
@@ -460,6 +475,8 @@ SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自�
 
 # The Internetの強みは **自律分散性** ではなかったのか？
 
+<!-- なので、The Internetの自律分散性の観点から言えば「メールサーバーを立てるのは無能がやること、Gmailを使え」論には強く異議を唱えていきたい -->
+
 ----
 
 ----
@@ -506,7 +523,7 @@ SMTP/POP3/IMAPはもともとself-sovereignなプロトコルだった。**自�
 # 1対多のユースケース
 
 - メーリングリスト、通知の購読
-  - [An Abuse-Resistant Messaging Protocol](https://www.slideshare.net/jim_fenton/notifs-2018) (Jim Fenton)
+  - [An Abuse-Resistant Messaging Protocol](https://www.slideshare.net/jim_fenton/notifs-2018) by Jim Fenton
   - 通知に特化した、オプトイン限定かつ送信先が認証されているメッセージングプロトコルのサブセットの提案(Notif)
 - グループでのメッセージのやりとり
   - 1対多でやりとりする形よりも、ルームを作ってそこにjoinするグループチャットのアプローチを採用すればよいのでは？
@@ -529,6 +546,18 @@ DIDCommはtransport-agnosticなコミュニケーションのアーキテクチ�
 
 ----
 
+# DIDComm
+
+…とはいえ、DIDが"purely self-sovereign"であるかというと必ずしもそうではない。
+
+- 自分自身でIDを名乗ることができる、という意味ではself-sovereignだが
+- 相手に見つけてもらう必要がある
+  - globally discoverableであるためには名前が必要
+  - DNS、DNSに紐づくlookup service
+  - public blockchainにIDを名乗るとしてもどのchainを信用するか問題
+
+----
+
 # Verifiable Credentialを用いたEメール
 
 各トランザクション（Eメールのやりとり）で異なるアイデンティティ表現を使うには？ → 特定のアイデンティティ表現に対応するVerifiable Credentialを使えばよいのでは？
@@ -537,11 +566,17 @@ spamフィルタはEメールに関連づいたVCの正当性・信頼度を判�
 
 よく考えたらただのbetter digital signatureかもしれないが…
 
+<!-- public blockchainに送信した情報を記録する、みたいな形になってしまうと今度はprivacyが損なわれるのであまりうれしくない -->
+
 ----
 
 # Data at Restの暗号化
 
-## JSON Web Message (JWM) の利用
+[JSON Web Message (JWM)](https://datatracker.ietf.org/doc/draft-looker-jwm/)が有望なのでは…と思ったらExpireしてしまっていた。
+
+暗号化して保存でき、相互運用可能なフォーマットがあるといいですね…
+
+<!-- 相互運用可能というか可搬性がある。GDPRもあるので -->
 
 ----
 
