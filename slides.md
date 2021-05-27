@@ -16,6 +16,16 @@
 
 ## `https://github.com/sylph01/20210528-wide-email-talk`
 
+![bg right:40% contain](github.png)
+
+----
+
+# English version (from 2020, so not up to date):
+
+## `https://speakerdeck.com/sylph01/did`
+
+![bg right:40% contain](eng.png)
+
 ----
 
 # <!--fit--> TL;DR
