@@ -210,6 +210,8 @@ NIST SP 800-63BではSMS（を含む公衆電話網）による二要素認証�
 
 非推奨ってよく言われていたのはPreview版の時点での話。
 
+暗号化されていないので（ただ公衆電話網のピンポイントの盗聴がインターネットの盗聴に比べて難しいというだけ）どのみち大差ない。
+
 <!-- https://ken5scal.hatenablog.com/entry/2017/07/31/SMS%E3%81%AB%E3%82%88%E3%82%8B2%E8%A6%81%E7%B4%A0%E8%AA%8D%E8%A8%BC%E3%81%AF%E6%9C%AC%E5%BD%93%E3%81%AB%E9%9D%9E%E6%8E%A8%E5%A5%A8%E3%81%AA%E3%81%AE%E3%81%8B%EF%BC%9F -->
 <!-- なお、emailは「特定のデバイスの所有を証明する方式ではない」ため「使用してはならない」 -->
 
@@ -550,10 +552,15 @@ spamフィルタはEメールに関連づいたVCの正当性・信頼度を判�
 
 ----
 
-- Eメールには暗号化がない、まともなidentity layerがない
-- identity layerの構築をEメールプロバイダに任せるとself-sovereignでなくなる
-- セキュアメッセージングのinteroperabilityが欲しい
-- DIDを使ったidentity layerを作ってそれに乗っかってしまうのがいいのでは？
+# まとめ
+
+- Eメールには暗号化がない
+  - Eメールをデジタルアイデンティティの核とし続けるのは怖い
+- Eメールにはまともなidentity layerがない
+  - identity layerの構築をEメールプロバイダに任せるとself-sovereignでなくなる
+- どうやって解決する？
+  - セキュアメッセージングのinteroperability
+  - DIDを使ったidentity layerを作る
 
 ----
 
