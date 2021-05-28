@@ -557,6 +557,8 @@ DIDCommはtransport-agnosticなコミュニケーションのアーキテクチ�
   - globally discoverableであるためには名前が必要
   - DNS、DNSに紐づくlookup service
   - public blockchainにIDを名乗るとしてもどのchainを信用するか問題
+- 見つけてもらってもオフラインだったらメッセージを保管する場所が必要
+  - self-sovereign(ただしマッチョに限る)であれば中央集権化への道が開かれてしまう
 
 <!-- 皮肉なことに「DNSから離れては生きられないのよ」ということに近い。「DNSに根を下ろし、SMTPとともに生きる」のもいいですが… -->
 
