@@ -11,11 +11,11 @@ using [Marp](https://marp.app/)
 
 ```
 asdf install
-npm ci
+yarn
 npx marp slides.md
 ```
 
 - node will be installed via `asdf`
   - node version is `14.17.0`, which seems pretty stable
-- `npm ci` will locally install Marp
+- `yarn` will locally install Marp
 - to use locally installed Marp, `npx marp`
