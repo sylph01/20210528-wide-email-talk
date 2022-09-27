@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # Email, Messaging, and Self-Sovereign Identity
 ## Ryo Kajiwara @ WIDE Meeting, 2021/05/28
 
